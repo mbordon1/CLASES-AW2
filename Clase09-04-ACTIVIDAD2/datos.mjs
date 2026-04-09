@@ -1,7 +1,7 @@
 import fsp from 'fs/promises';
 import path from 'node:path';
 
-const ruta = path.resolve('./usuarios.json');
+const ruta = path.join('./usuarios.json');
 
 export async function guardarUsuarios(datos) {
     const contenido = JSON.stringify(datos, null, 4);
