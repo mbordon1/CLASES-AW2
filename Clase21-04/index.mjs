@@ -7,12 +7,15 @@ const app = express();
 
 // Verbo y Ruta configurada -> GET / 
 app.get('/', (req, res) => {
+    res.status(200);
     res.send('Hola erikkkk');
 });
 
 // Verbo y Ruta configurada -> GET / 
 app.get('/usuarios', (req, res) => {
-    res.end('Hola en /usuarios');
+    res.status(200);
+    res.set('Content-Type', 'text/html');
+    res.end('<h1>Hola en /usuarios</h1>');
 });
 
 // Verbo y Ruta configurada -> POST / 
