@@ -1,0 +1,15 @@
+{
+  "name": "clase05-05_apirest",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "dev": "node --watch index.mjs"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
