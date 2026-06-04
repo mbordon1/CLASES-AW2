@@ -26,9 +26,9 @@ app.use('/admin',chequearAcceso,express.static('./front/front_admin'))
 
 app.post('/autenticar', (req, res) => {
     //primero verificar las credenciales 
-    const {usuario, password} = req.body
+    const {usuario, clave} = req.body
 
-    if(usuario != 'mbordon' || password != '123456'){
+    if(usuario != 'mbordon' || clave != '123456'){
         return res.redirect('/login')
     }
     //Gestionamos cookies 
@@ -37,7 +37,8 @@ app.post('/autenticar', (req, res) => {
         secure: true, /// https
         httpOnly: true, /// no se puede leer desde js
         sameSite: 'lax', // como se va a leer la cookie con respecto al dominio 
-        signed: true // si la cookie se va a firmar o no 
+        signed: true, // si la cookie se va a firmar o no 
+        maxAge: 1000 * 60 /// en milisegundos
     })
     //Siempre la respuesta final
     // redirect lo vamos a usar solo si el front es html puro 
